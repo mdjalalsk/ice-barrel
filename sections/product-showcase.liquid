@@ -1,0 +1,109 @@
+<div class="relative w-full shadow-lg lg:-mt-[200px]">
+  <div class="relative h-[800px] md:h-auto lg:h-[676px] bg-gradient-to-b from-transparent to-white/95 backdrop-blur-[1px]">
+    <!-- Background Product Image -->
+    <div class="absolute inset-0 z-0 overflow-hidden block md:hidden lg:block">
+      {% if section.settings.product_image != blank %}
+        <img
+          src="{{ section.settings.product_image | image_url: width: 900 }}"
+          alt="Ice Barrel Product"
+          width="900"
+          height="600"
+          class="absolute lg:right-[45.7px] bottom-0 lg:top-0 w-full h-auto  lg:w-[70%] object-cover object-bottom">
+      {% else %}
+        {{ 'product-apparel-1' | placeholder_svg_tag: 'absolute md:right-[45.7px] bottom-0 lg:top-0 w-full h-auto md:w-[75%] lg:w-[70%] object-cover object-bottom' }}
+      {% endif %}
+    </div>
+
+    <!-- Content Overlay -->
+    <div class="relative z-10 px-4 lg:px-20 py-4 md:py-10 lg:py-16">
+
+      <div class="w-full md:w-[280px] lg:w-[330px]">
+        <!-- Title -->
+        <h2 class="font-medium text-[48.7px] leading-[50.52px] tracking-[-1.01px] font-inter align-middle text-[#191B1D] mb-6">
+          {{ section.settings.title }}
+        </h2>
+      </div>
+
+      <!-- Features List -->
+      {% if section.settings.feature_checkmark != blank %}
+        <div class="mb-6">
+          <img
+            src="{{ section.settings.feature_checkmark | image_url: width: 120 }}"
+            width="120"
+            height="20"
+            alt="Feature Checkmark">
+        </div>
+      {% endif %}
+      <div class="w-full md:w-[360px] lg:w-[472px] lg:pr-8 pr-0">
+        <!-- Description -->
+        <p class="text-[#191B1D73] font-normal text-[15.6px] leading-[20.8px] tracking-[-0.16px] font-inter align-middle mb-12 ">
+          {{ section.settings.description }}
+        </p>
+      </div>
+
+      <!-- Bottom Content -->
+      <div class=" mt-5 md:mt-10 lg:mt-12 text-left md:text-right lg:text-left">
+        <h2 class="font-medium text-[78.7px] leading-[100px] tracking-[-0.16px] align-middle text-[#191B1D]">
+          {{ section.settings.left_bottom_title }}
+        </h2>
+        <p class="mt-3 lg:mt-6 text-[15.6px] leading-[19.2px] tracking-[-0.16px] font-inter align-middle font-extrabold">
+          <strong>{{ section.settings.left_bottom_description-1 }}</strong>
+          <br>
+          <span class="text-[#191B1D73]">{{ section.settings.left_bottom_description-2 }}</span>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+{% schema %}
+  {
+    "name": "Product Showcase",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "product_image",
+        "label": "Product Image"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default": "All weather durability"
+      },
+      {
+        "type": "image_picker",
+        "id": "feature_checkmark",
+        "label": "Feature Checkmark"
+      },
+      {
+        "type": "textarea",
+        "id": "description",
+        "label": "Description",
+        "default": "Rotomolded for lasting strength and outdoor use, the Ice Barrel 400 is designed to handle sun, rain, and snow. Use the included UV-resistant cover when not in use to prevent fading and extend the life of your barrel for years to come."
+      }, {
+        "type": "header",
+        "content": "Left Bottm Content"
+      }, {
+        "type": "text",
+        "id": "left_bottom_title",
+        "label": "Left Bottom Title",
+        "default": "4x"
+      }, {
+        "type": "textarea",
+        "id": "left_bottom_description-1",
+        "label": "Left Bottom Description-1",
+        "default": "Stronger than our competitors "
+      }, {
+        "type": "textarea",
+        "id": "left_bottom_description-2",
+        "label": "Left Bottom Description-2",
+        "default": "So strong we offer a lifetime warranty"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Product Showcase"
+      }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,32 @@
+{
+  "sections": {
+    "home-hero": {
+      "type": "home-hero"
+    },
+    "compact-ready": {
+      "type": "compact-ready"
+    },
+    "section-break": {
+      "type": "section-break"
+    },
+    "upright-seated-position": {
+      "type": "upright-seated-position"
+    },
+    "product-showcase": {
+      "type": "product-showcase"
+    },
+    "product-specifications": {
+      "type": "product-specifications"
+    },
+    
+  },
+  "order": [
+    "home-hero",
+    "compact-ready",
+    "section-break",
+    "upright-seated-position",
+    "product-showcase",
+    "product-specifications",
+    
+  ]
+}

@@ -1,0 +1,252 @@
+<!-- sections/header.liquid -->
+<div class="bg-white border-y border-[#191B1D1A] lg:border-[#191B1D14] sticky top-0 z-50 px-4 lg:px-20">
+  <div class="w-full mx-auto ">
+    <div class="w-full flex items-center justify-between h-[50px] lg:h-[59.18px]">
+      <!-- Logo -->
+      <div class="flex-shrink-0">
+        <a href="/" class="flex items-center">
+          {% if section.settings.logo != blank %}
+            <img
+              src="{{ section.settings.logo | image_url: width: 160 }}"
+              alt="Logo"
+              class="w-auto h-5 md:h-[35px]"
+              width="auto"
+              height="auto">
+          {% else %}
+            {{ shop.name }}
+          {% endif %}
+        </a>
+      </div>
+
+      <!-- Desktop Navigation -->
+      <nav class="hidden lg:flex items-center space-x-8">
+        {% for link in section.settings.menu.links %}
+          <div class="relative group">
+            <a href="{{ link.url }}" class="flex items-center text-[#191B1D] hover:text-gray-900 text-[15.6px] font-normal leading-[20.8px] tracking-[-0.16px] transition-colors duration-200" style="font-family: Inter;">
+              {{ link.title }}
+              {% if link.links != blank %}
+                <svg
+                  class="ml-1 h-3 w-3 transition-transform duration-200 group-hover:rotate-180"
+                  fill="currentColor"
+                  viewBox="0 0 20 20">
+                  <path
+                    fill-rule="evenodd"
+                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                    clip-rule="evenodd" />
+                </svg>
+              {% endif %}
+            </a>
+
+            <!-- Dropdown Menu -->
+            {% if link.links != blank %}
+              <div class="absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-1 group-hover:translate-y-0">
+                <div class="py-2">
+                  {% for child_link in link.links %}
+                    <a href="{{ child_link.url }}" class="block px-4 py-2 text-[#191B1D] hover:text-gray-900 text-[15.6px] font-normal leading-[20.8px] tracking-[-0.16px] transition-colors duration-200" style="font-family: Inter;">{{ child_link.title }}</a>
+                  {% endfor %}
+                </div>
+              </div>
+            {% endif %}
+          </div>
+        {% endfor %}
+
+        <a href="/pages/talk-live" class="bg-[#191B1D] text-white px-4 py-2 rounded-[6px] font-inter font-normal text-[13px] leading-[18.2px] tracking-[-0.16px] align-middle transition-colors duration-200 shadow-sm hover:shadow-md">
+          Talk Live
+        </a>
+
+        <div class="hidden lg:flex items-center gap-x-3">
+          <a href="/" >
+            <svg
+              width="21"
+              height="20"
+              viewBox="0 0 21 20"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M9.62447 2.0834C13.5968 2.0834 16.8208 5.30732 16.8208 9.27965C16.8208 13.2519 13.5968 16.4759 9.62447 16.4759C5.65214 16.4759 2.42822 13.2519 2.42822 9.27965C2.42822 5.30732 5.65214 2.0834 9.62447 2.0834ZM9.62447 14.8768C12.7169 14.8768 15.2216 12.3721 15.2216 9.27965C15.2216 6.18726 12.7169 3.68256 9.62447 3.68256C6.53208 3.68256 4.02739 6.18726 4.02739 9.27965C4.02739 12.3721 6.53208 14.8768 9.62447 14.8768ZM16.4092 14.9336L18.6708 17.1951L17.54 18.3259L15.2785 16.0643L16.4092 14.9336Z"
+                fill="#191B1D"
+                stroke="white"
+                stroke-width="0.479688" />
+            </svg>
+          </a>
+
+          <!-- Account -->
+          <a href="/account" >
+                  <svg class="w-7 h-7" width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="18" cy="12" r="4" stroke="black" stroke-width="1.5"/>
+            <path d="M10 26c2-3 6-4 8-4s6 1 8 4" stroke="black" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+            </svg>
+          </a>
+
+          <!-- Cart -->
+          <a href="/cart" >
+            <svg
+              width="36"
+              height="36"
+              viewBox="0 0 36 36"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M14.2092 15.1238H14.3243V15.0087V13.4735C14.3243 11.4174 15.9911 9.75064 18.0472 9.75064C20.1032 9.75064 21.77 11.4174 21.77 13.4735V15.0087V15.1238H21.8852H24.188C24.5483 15.1238 24.8404 15.416 24.8404 15.7763V24.9876C24.8404 25.3478 24.5483 25.64 24.188 25.64H11.9064C11.546 25.64 11.2539 25.3478 11.2539 24.9876V15.7763C11.2539 15.416 11.546 15.1238 11.9064 15.1238H14.2092ZM14.3243 16.5439V16.4288H14.2092H12.674H12.5588V16.5439V24.22V24.3351H12.674H23.4204H23.5355V24.22V16.5439V16.4288H23.4204H21.8852H21.77V16.5439V17.964H20.4651V16.5439V16.4288H20.35H15.7444H15.6292V16.5439V17.964H14.3243V16.5439ZM15.6292 15.0087V15.1238H15.7444H20.35H20.4651V15.0087V13.4735C20.4651 12.1381 19.3825 11.0556 18.0472 11.0556C16.7118 11.0556 15.6292 12.1381 15.6292 13.4735V15.0087Z"
+                fill="#191B1D"
+                stroke="white"
+                stroke-width="0.23025" />
+              <g clip-path="url(#clip0_2_2767)">
+                <path d="M12.9097 15.4719H11.5358C11.4545 15.0767 11.3124 14.7296 11.1092 14.4304C10.9098 14.1313 10.6661 13.8801 10.378 13.677C10.0936 13.4702 9.77784 13.3151 9.43068 13.2117C9.08352 13.1082 8.72159 13.0565 8.34489 13.0565C7.65795 13.0565 7.03565 13.2301 6.47798 13.5773C5.92401 13.9244 5.48267 14.4359 5.15398 15.1118C4.82898 15.7876 4.66648 16.6168 4.66648 17.5992C4.66648 18.5815 4.82898 19.4107 5.15398 20.0865C5.48267 20.7624 5.92401 21.2739 6.47798 21.621C7.03565 21.9682 7.65795 22.1418 8.34489 22.1418C8.72159 22.1418 9.08352 22.0901 9.43068 21.9867C9.77784 21.8832 10.0936 21.73 10.378 21.5269C10.6661 21.32 10.9098 21.0671 11.1092 20.7679C11.3124 20.4651 11.4545 20.1179 11.5358 19.7264H12.9097C12.8063 20.3063 12.6179 20.8251 12.3446 21.2831C12.0713 21.7411 11.7315 22.1307 11.3253 22.452C10.919 22.7696 10.4629 23.0115 9.95696 23.1777C9.45469 23.3439 8.91733 23.427 8.34489 23.427C7.37727 23.427 6.51676 23.1906 5.76335 22.7179C5.00994 22.2452 4.41719 21.573 3.98509 20.7014C3.55298 19.8298 3.33693 18.7957 3.33693 17.5992C3.33693 16.4026 3.55298 15.3685 3.98509 14.4969C4.41719 13.6253 5.00994 12.9531 5.76335 12.4804C6.51676 12.0077 7.37727 11.7713 8.34489 11.7713C8.91733 11.7713 9.45469 11.8544 9.95696 12.0206C10.4629 12.1868 10.919 12.4305 11.3253 12.7519C11.7315 13.0695 12.0713 13.4572 12.3446 13.9152C12.6179 14.3695 12.8063 14.8884 12.9097 15.4719ZM17.2964 23.4713C16.7572 23.4713 16.2679 23.3698 15.8284 23.1666C15.3889 22.9598 15.0399 22.6625 14.7814 22.2747C14.5228 21.8832 14.3936 21.4105 14.3936 20.8565C14.3936 20.369 14.4896 19.9739 14.6817 19.671C14.8737 19.3645 15.1304 19.1244 15.4517 18.9509C15.773 18.7773 16.1275 18.648 16.5153 18.5631C16.9068 18.4744 17.3001 18.4043 17.6953 18.3526C18.2123 18.2861 18.6315 18.2362 18.9528 18.203C19.2778 18.1661 19.5142 18.1051 19.6619 18.0202C19.8133 17.9352 19.889 17.7875 19.889 17.577V17.5327C19.889 16.9861 19.7395 16.5614 19.4403 16.2585C19.1449 15.9557 18.6961 15.8043 18.0942 15.8043C17.47 15.8043 16.9807 15.9409 16.6261 16.2142C16.2716 16.4875 16.0223 16.7793 15.8782 17.0895L14.6373 16.6463C14.8589 16.1293 15.1544 15.7267 15.5237 15.4386C15.8967 15.1469 16.303 14.9438 16.7425 14.8293C17.1856 14.7111 17.6214 14.652 18.0498 14.652C18.3231 14.652 18.6371 14.6852 18.9916 14.7517C19.3498 14.8145 19.6951 14.9456 20.0275 15.145C20.3636 15.3445 20.6425 15.6455 20.864 16.048C21.0856 16.4506 21.1964 16.9898 21.1964 17.6656V23.2719H19.889V22.1196H19.8226C19.7339 22.3043 19.5862 22.5019 19.3794 22.7124C19.1726 22.9229 18.8974 23.102 18.554 23.2497C18.2105 23.3974 17.7913 23.4713 17.2964 23.4713ZM17.4959 22.2969C18.0129 22.2969 18.4487 22.1953 18.8032 21.9922C19.1615 21.7891 19.4311 21.5269 19.6121 21.2055C19.7967 20.8842 19.889 20.5463 19.889 20.1918V18.9952C19.8336 19.0617 19.7118 19.1226 19.5234 19.178C19.3388 19.2297 19.1246 19.2759 18.8808 19.3165C18.6407 19.3534 18.4062 19.3867 18.1773 19.4162C17.952 19.4421 17.7692 19.4642 17.6288 19.4827C17.289 19.527 16.9714 19.599 16.676 19.6987C16.3842 19.7948 16.1478 19.9406 15.9669 20.1364C15.7896 20.3284 15.701 20.5906 15.701 20.923C15.701 21.3773 15.869 21.7207 16.2051 21.9534C16.5449 22.1824 16.9751 22.2969 17.4959 22.2969ZM23.4227 23.2719V14.7628H24.6858V16.048H24.7744C24.9295 15.627 25.2102 15.2854 25.6164 15.0232C26.0227 14.7609 26.4806 14.6298 26.9903 14.6298C27.0863 14.6298 27.2063 14.6317 27.3504 14.6354C27.4944 14.6391 27.6034 14.6446 27.6772 14.652V15.9815C27.6329 15.9705 27.5313 15.9538 27.3725 15.9317C27.2174 15.9058 27.0531 15.8929 26.8795 15.8929C26.4659 15.8929 26.0965 15.9797 25.7715 16.1533C25.4502 16.3232 25.1954 16.5595 25.0071 16.8624C24.8224 17.1615 24.7301 17.5031 24.7301 17.8872V23.2719H23.4227ZM33.3008 14.7628V15.8707H28.8911V14.7628H33.3008ZM30.1763 12.7242H31.4837V20.8344C31.4837 21.2037 31.5373 21.4807 31.6444 21.6653C31.7552 21.8463 31.8955 21.9682 32.0654 22.031C32.239 22.0901 32.4218 22.1196 32.6138 22.1196C32.7579 22.1196 32.876 22.1122 32.9684 22.0974C33.0607 22.079 33.1346 22.0642 33.19 22.0531L33.4559 23.2276C33.3672 23.2608 33.2435 23.294 33.0847 23.3273C32.9259 23.3642 32.7246 23.3827 32.4809 23.3827C32.1115 23.3827 31.7496 23.3033 31.3951 23.1445C31.0442 22.9857 30.7525 22.7438 30.5198 22.4188C30.2908 22.0938 30.1763 21.6838 30.1763 21.1889V12.7242Z" fill="#191B1D" />
+                <path d="M2.40625 26.3742H34.0763V27.4378H2.40625V26.3742Z" fill="#191B1D" />
+              </g>
+              <defs>
+                <clipPath id="clip0_2_2767">
+                  <rect
+                    width="1"
+                    height="35.19"
+                    fill="white"
+                    transform="translate(17.2969 0.484375)" />
+                </clipPath>
+              </defs>
+            </svg>
+          </a>
+        </div>
+      </nav>
+
+      <!-- Mobile menu button -->
+      <div class="lg:hidden flex items-center gap-x-[14px]">
+        <!-- User Profile Icon -->
+        <a href="/account" >
+          <svg class="w-8 h-8" width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+           <circle cx="18" cy="12" r="4" stroke="black" stroke-width="1"/>
+         <path d="M10 26c2-3 6-4 8-4s6 1 8 4" stroke="black" stroke-width="1" fill="none" stroke-linecap="round"/>
+         </svg>
+
+        </a>
+        <!-- Shopping Cart Icon -->
+        <a href="{{cart.url}}">
+          <svg
+          class="w-6 h-6 stroke-black"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="0.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path d="M6 9V7a6 6 0 1 1 12 0v2" />
+          <rect x="4" y="9" width="16" height="12" rx="2" />
+          <!-- Three dots spaced out -->
+          <circle cx="12" cy="13" r="0.5" />
+          <circle cx="12" cy="16" r="0.5" />
+          <circle cx="12" cy="19" r="0.5" />
+        </svg>
+
+        </a>
+
+        <!-- Hamburger Menu Icon -->
+        <button type="button" class="mobile-menu-button text-gray-600 hover:text-gray-900 transition-colors duration-200">
+          <svg
+            class="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24">
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile menu -->
+  <div class="mobile-menu lg:hidden hidden bg-white border-t border-gray-100">
+    <div class="px-4 py-6 space-y-4">
+      <!-- Mobile Navigation Links -->
+      {% for link in section.settings.menu.links %}
+        <div class="mobile-menu-item">
+          <div class="flex items-center justify-between">
+            <a href="{{ link.url }}" class="block text-[#191B1D] hover:text-gray-900 text-[15.6px] font-normal leading-[20.8px] tracking-[-0.16px] transition-colors duration-200" style="font-family: Inter;">
+              {{ link.title }}
+            </a>
+            {% if link.links != blank %}
+              <button type="button" class="mobile-submenu-toggle ml-2 text-gray-600 focus:outline-none">
+                <svg class="w-4 h-4 transition-transform duration-200" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                </svg>
+              </button>
+            {% endif %}
+          </div>
+          {% if link.links != blank %}
+            <div class="mobile-submenu ml-4 mt-2 space-y-2 hidden">
+              {% for child_link in link.links %}
+                <a href="{{ child_link.url }}" class="block text-[#191B1D] hover:text-gray-900 text-[15.6px] font-normal leading-[20.8px] tracking-[-0.16px] transition-colors duration-200" style="font-family: Inter;">
+                  {{ child_link.title }}
+                </a>
+              {% endfor %}
+            </div>
+          {% endif %}
+        </div>
+      {% endfor %}
+
+      <!-- Mobile Talk Live Button -->
+      <div class="pt-4">
+        <a href="/pages/talk-live" class="block w-full bg-gray-900 text-white px-4 py-3 rounded-sm text-sm font-medium hover:bg-gray-800 transition-colors duration-200 text-center">
+          Talk Live
+        </a>
+      </div>
+
+
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const mobileMenuButton = document.querySelector('.mobile-menu-button');
+    const mobileMenu = document.querySelector('.mobile-menu');
+    if (mobileMenuButton && mobileMenu) {
+      mobileMenuButton.addEventListener('click', function() {
+        mobileMenu.classList.toggle('hidden');
+      });
+    }
+
+    // Mobile submenu toggles
+    document.querySelectorAll('.mobile-submenu-toggle').forEach(function(toggleBtn) {
+      toggleBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        const parent = toggleBtn.closest('.mobile-menu-item');
+        const submenu = parent.querySelector('.mobile-submenu');
+        if (submenu) {
+          submenu.classList.toggle('hidden');
+          // Animate arrow
+          const svg = toggleBtn.querySelector('svg');
+          if (svg) {
+            svg.classList.toggle('rotate-180');
+          }
+        }
+      });
+    });
+  });
+</script>
+
+{% schema %}
+  {
+    "name": "Main menu",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Menu Settings"
+      }, {
+        "type": "image_picker",
+        "id": "logo",
+        "label": "Select you logo"
+      }, {
+        "type": "link_list",
+        "id": "menu",
+        "label": "Select Menu"
+      }
+    ]
+  }
+
+{% endschema %}

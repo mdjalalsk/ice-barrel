@@ -1,0 +1,157 @@
+<div class="home-hero-section">
+  <div class="relative isolate overflow-hidden  h-[500px] lg:h-[925px]">
+    {% if section.settings.hero_image != blank %}
+      <img
+        src="{{ section.settings.hero_image | image_url: width: 1425 }}"
+        alt="Hero Background"
+        width="1425"
+        height="925"
+        class="absolute inset-0 -z-10 object-cover h-[500px] lg:h-[925px] w-full">
+    {% else %}
+      {{ 'hero-apparel-1' | placeholder_svg_tag: 'absolute inset-0 -z-10 object-cover h-[500px] lg:h-[925px] w-full' }}
+    {% endif %}
+    <div class=" mx-[55px] lg:mx-[80px] mt-[53px] lg:mt-[74.99px]">
+      <div class=" flex flex-col items-center text-center">
+        <p class=" flex items-center gap-x-1 font-normal text-[11.1px] leading-[14px] tracking-[-0.16px] align-middle mb-3  text-[#191B1D]"> 
+          <span class="inline-block md:hidden ">
+            <svg width="72" height="13" viewBox="0 0 72 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M6.5 0L7.95934 4.49139H12.6819L8.86126 7.26722L10.3206 11.7586L6.5 8.98278L2.6794 11.7586L4.13874 7.26722L0.318133 4.49139H5.04066L6.5 0Z" fill="#191B1D"/>
+<path d="M35.7495 0L37.2089 4.49139H41.9314L38.1108 7.26722L39.5701 11.7586L35.7495 8.98278L31.9289 11.7586L33.3883 7.26722L29.5677 4.49139H34.2902L35.7495 0Z" fill="#191B1D"/>
+<path d="M21.1245 0L22.5839 4.49139H27.3064L23.4858 7.26722L24.9451 11.7586L21.1245 8.98278L17.3039 11.7586L18.7633 7.26722L14.9427 4.49139H19.6652L21.1245 0Z" fill="#191B1D"/>
+<path d="M50.3759 0L51.8352 4.49139H56.5578L52.7372 7.26722L54.1965 11.7586L50.3759 8.98278L46.5553 11.7586L48.0146 7.26722L44.194 4.49139H48.9166L50.3759 0Z" fill="#191B1D"/>
+<path d="M65.0005 0L66.4598 4.49139H71.1823L67.3617 7.26722L68.8211 11.7586L65.0005 8.98278L61.1799 11.7586L62.6392 7.26722L58.8186 4.49139H63.5411L65.0005 0Z" fill="#191B1D"/>
+<mask id="mask0_1_2110" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="58" y="0" width="14" height="12">
+<path d="M64.9955 0L66.4548 4.49139H71.1773L67.3567 7.26722L68.8161 11.7586L64.9955 8.98278L61.1749 11.7586L62.6342 7.26722L58.8136 4.49139H63.5361L64.9955 0Z" fill="#1E1F21"/>
+</mask>
+<g mask="url(#mask0_1_2110)">
+<rect width="5.3625" height="12.5125" transform="matrix(-1 0 0 1 71.5003 0)" fill="#191B1D"/>
+</g>
+</svg>
+</span> 
+{{ section.settings.hero_reviews }}</p>
+        {% if section.settings.hero_product_image != blank %}
+          <img
+            src="{{ section.settings.hero_product_image | image_url: width: 427 }}"
+            alt="Hero Product Image"
+            width="427"
+            height="427">
+        {% endif %}
+        <p class="font-normal text-[19.2px] leading-[26px] tracking-[-0.16px] align-middle text-[#191B1D] mt-[18.5px] ">{{ section.settings.hero_description }}</p>
+        <div class="flex items-center gap-x-3 mt-5">
+         <button class=" flex items-center justify-center h-[50px] w-[118px]  bg-[#191B1D] text-white rounded-[200px]">
+          <a href="{{ section.settings.hero_button_url }}" class="font-normal text-[15.6px] leading-[16px] tracking-[-0.16px] align-middle">{{ section.settings.hero_button_text }}</a>
+         </button> 
+          <span class="font-medium text-[18.9px] leading-[24px] tracking-[-0.16px] align-middle">{{ section.settings.hero_price_after }}</span>
+          <span class="hidden lg:block line-through text-red-500">{{ section.settings.hero_price_before }}</span>
+        </div>
+      </div>
+
+    </div>
+    <div class="cookie-modal  absolute bottom-[52px] left-0 w-full  hidden lg:flex flex-col lg:flex-row justify-between items-center bg-white gap-y-5 lg:gap-y-0  p-5 lg:p-[32px] z-50">
+      <div class="w-full lg:w-[721px]">
+        <h2 class="font-medium text-[27px] leading-[28.43px] tracking-[-1.35px] align-middle text-[#191B1D]">{{ section.settings.cookie_consent_title }}</h2>
+        <p class="mt-[14px] font-normal text-[15.6px] leading-[26px] tracking-[-0.16px] align-middle text-[#1F1F1F]">{{ section.settings.cookie_consent_text }}</p>
+      </div>
+      <div class="w-full lg:w-[540px] flex items-center gap-x-[30px]">
+        <button class="accept-cookies w-[270px]  border-[1px] px-[52px] py-[10px] border-[#1F1F1F]">{{ section.settings.cookie_consent_accept_text }}</button>
+        <button class=" decline-cookies w-[270px] border-[1px] px-[52px] py-[10px] border-[#1F1F1F]">{{ section.settings.cookie_consent_decline_text }}</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Home Hero Section",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "hero_image",
+        "label": "Hero Image"
+      }, {
+        "type": "image_picker",
+        "id": "hero_product_image",
+        "label": "Hero Product Image"
+      }, {
+        "type": "text",
+        "id": "hero_reviews",
+        "label": "Hero Reviews",
+        "default": "5,852 reviews"
+      }, {
+        "type": "textarea",
+        "id": "hero_description",
+        "label": "Hero Description",
+        "default": "The iconic design — trusted by thousands for daily cold exposure."
+      },
+      {
+        "type": "text",
+        "id": "hero_button_text",
+        "label": "Hero Button Text",
+        "default": "Buy Now"
+      },
+      {
+        "type": "url",
+        "id": "hero_button_url",
+        "label": "Hero Button URL",
+        "default": "/collections/all"
+      },
+      {
+        "type": "text",
+        "id": "hero_price_before",
+        "label": "Hero Price",
+        "default": "$1,274.99"
+      },
+      {
+        "type": "text",
+        "id": "hero_price_after",
+        "label": "Hero Price After",
+        "default": "$1,274.99"
+      },
+      {
+        "type":"header",
+        "content": "Cookie Consent Banner Settings"
+      },{
+        "type": "text",
+        "id": "cookie_consent_title",
+        "label": "Cookie Consent Title",
+        "default": "We value your privacy"
+      },
+      {
+        "type": "text",
+        "id": "cookie_consent_text",
+        "label": "Cookie Consent Text",
+        "default": "We value your privacy. We use cookies and other technologies to personalize your experience, perform marketing, and collect analytics."
+      },{
+        "type": "text",
+        "id": "cookie_consent_accept_text",
+        "label": "Accept Button Text",
+        "default": "Accept"
+      },
+      {
+        "type": "text",
+        "id": "cookie_consent_decline_text",
+        "label": "Decline Button Text",
+        "default": "Decline"
+      },
+      {
+        "type": "text",
+        "id": "privacy_link_text",
+        "label": "Privacy Policy Link Text",
+        "default": "Privacy Policy"
+      },
+      {
+        "type": "url",
+        "id": "privacy_policy_url",
+        "label": "Privacy Policy URL"
+  
+      }
+    ],
+    "presets": [
+      {
+        "name": "Home Hero Section",
+        "category": "Custom Sections",
+        "settings": {}
+      }
+    ]
+  }
+{% endschema %}

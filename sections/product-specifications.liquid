@@ -1,0 +1,151 @@
+<div class="bg-[#191B1D] lg:py-25 w-full py-16 lg:px-20 px-4">
+  <div class="w-full mx-auto ">
+    <div class="flex flex-col md:flex-row items-center">
+
+      <!-- Left Column - Specifications -->
+      <div class="w-full md:w-1/2 lg:w-[379.4px] px-4 lg:px-0">
+        <h2 class="font-medium text-[48.7px] leading-[50.52px] tracking-[-1.01px] font-inter align-middle text-white lg:mr-20 mr-0">{{ section.settings.headline  }}</h2>
+
+        <div class="space-y-3.5 mt-[50.28px]">
+          <!-- Specification A -->
+          <div class="flex justify-between items-center  ">
+            <span class="text-white font-normal text-[15.6px] leading-[21px] tracking-[-0.16px] font-inter align-middle border-b border-gray-600 pb-3">A. Height</span>
+            <span class="text-white font-normal text-[15.6px] leading-[21px] tracking-[-0.16px] font-inter align-middle">{{ section.settings.height  }}</span>
+          </div>
+
+          <!-- Specification B -->
+          <div class="flex justify-between items-center pb-2">
+            <span class="text-white font-normal text-[15.6px] leading-[21px] tracking-[-0.16px] font-inter align-middle border-b border-gray-600 pb-3">B. Width</span>
+            <span class="text-white font-normal text-[15.6px] leading-[21px] tracking-[-0.16px] font-inter align-middle">{{ section.settings.width  }}</span>
+          </div>
+
+          <!-- Specification C -->
+          <div class="flex justify-between items-center pb-2">
+            <span class="text-white font-normal text-[15.6px] leading-[21px] tracking-[-0.16px] font-inter align-middle border-b border-gray-600 pb-3">C. Length</span>
+            <span class="text-white font-normal text-[15.6px] leading-[21px] tracking-[-0.16px] font-inter align-middle">{{ section.settings.length  }}</span>
+          </div>
+
+          <!-- Specification D -->
+          <div class="flex justify-between items-center  pb-2">
+            <span class="text-white font-normal text-[15.6px] leading-[21px] tracking-[-0.16px] font-inter align-middle border-b border-gray-600 pb-3">D. Weight Empty</span>
+            <span class="text-white font-normal text-[15.6px] leading-[21px] tracking-[-0.16px] font-inter align-middle">{{ section.settings.weight_empty  }}</span>
+          </div>
+
+          <!-- Specification E -->
+          <div class="flex justify-between items-center  pb-2">
+            <span class="text-white font-normal text-[15.6px] leading-[21px] tracking-[-0.16px] font-inter align-middle pb-3">E. Weight Filled</span>
+            <span class="text-white font-normal text-[15.6px] leading-[21px] tracking-[-0.16px] font-inter align-middle">{{ section.settings.weight_filled  }}</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Middle Column - Barrel Illustration with Length/Width -->
+      <div class=" hidden lg:flex justify-center lg:justify-start items-center mx-auto lg:mx-[63.25px] my-[63.25px] lg:my-0 w-full lg:w-[484.75px]">
+        {% if section.settings.barrel_illustration_1 != blank %}
+
+          <img
+            src="{{ section.settings.barrel_illustration_1 | image_url: width: 274  }}"
+            alt="Barrel with Logo"
+            width="274"
+            height="386">
+
+        {% else %}
+          {{ 'product-apparel-1' | placeholder_svg_tag: 'w-[274px] h-[386px]' }}
+        {% endif %}
+      </div>
+      <!-- Right Column - Barrel Illustration with Length/Width -->
+
+      <div class=" hidden lg:flex justify-center lg:justify-end items-center w-full lg:w-[274px]">
+        {% if section.settings.barrel_illustration_2 != blank %}
+          <img
+            src="{{ section.settings.barrel_illustration_2 | image_url: width: 274  }}"
+            alt="Barrel with Logo"
+            width="274"
+            height="386">
+        {% else %}
+          {{ 'product-apparel-1' | placeholder_svg_tag: 'w-[274px] h-[386px]' }}
+        {% endif %}
+      </div>
+         <!-- mobile menu - Barrel Illustration with Length/Width -->
+
+      <div class=" lg:hidden flex justify-center items-center w-full md:w-1/2 mt-[60px] ">
+        {% if section.settings.barrel_illustration_3 != blank %}
+          <img
+            src="{{ section.settings.barrel_illustration_3 | image_url: width: 4000  }}"
+            alt="Barrel with Logo"
+            width="400"
+            height="287"
+            class="full h-[287px] object-cover"
+            >
+            
+        {% else %}
+          {{ 'product-apparel-1' | placeholder_svg_tag: ' h-[386px] full h-[287px] object-cover' }}
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Product Specifications",
+    "settings": [
+      {
+        "type": "text",
+        "id": "headline",
+        "label": "Headline",
+        "default": "Fits through any door"
+      },
+      {
+        "type": "text",
+        "id": "height",
+        "label": "Height (A)",
+        "default": "42 in"
+      },
+      {
+        "type": "text",
+        "id": "width",
+        "label": "Width (B)",
+        "default": "31 in"
+      },
+      {
+        "type": "text",
+        "id": "length",
+        "label": "Length (C)",
+        "default": "31 in"
+      }, {
+        "type": "text",
+        "id": "weight_empty",
+        "label": "Weight Empty (D)",
+        "default": "55 lbs"
+      }, {
+        "type": "text",
+        "id": "weight_filled",
+        "label": "Weight Filled (E)",
+        "default": "930 lbs"
+      }, {
+        "type": "image_picker",
+        "id": "barrel_illustration_1",
+        "label": "Barrel Illustration 1 (Length/Width)"
+      }, {
+        "type": "image_picker",
+        "id": "barrel_illustration_2",
+        "label": "Barrel Illustration 2 (Height/Logo)"
+      },
+        {
+        "type": "header",
+        "content": "Mobile Device Image"
+      },
+      {
+        "type": "image_picker",
+        "id": "barrel_illustration_3",
+        "label": "Mobile Bottom Image"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Product Specifications"
+      }
+    ]
+  }
+{% endschema %}

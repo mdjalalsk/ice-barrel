@@ -1,0 +1,10 @@
+{
+  "current": "Default",
+  "presets": {
+    "Default": {
+      "hero_background_image": "shopify://shop_images/hero-bg.png",
+      "hero_title": "Transform Your Recovery",
+      "hero_description": "Experience the power of cold therapy with our premium ice barrel. Boost recovery, reduce inflammation, and enhance your performance."
+    }
+  }
+}

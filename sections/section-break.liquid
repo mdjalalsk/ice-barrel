@@ -1,0 +1,23 @@
+<div class=" bg-[linear-gradient(0deg,_#FFFFFF_50%,_#191B1D_50%)] h-[400px] lg:h-[805px] w-full relative">
+  {% if section.settings.section_break_image != blank %}
+    <img src="{{ section.settings.section_break_image | image_url: width: 1265  }}" alt="Section Break Image" width="1265" height="full" class="w-full h-full px-8 lg:px-20 object-cover">
+  {% else %}
+    {{ 'collection-apparel-1' | placeholder_svg_tag: 'w-full h-full px-20 object-cover' }}
+  {% endif %}
+  
+  <!-- Bottom overlay with glass effect and inset shadow -->
+  <div class="absolute bottom-0 left-0 z-50 w-full h-[150px] px-20 " style="background: linear-gradient(180deg, rgba(244, 244, 244, 0) 0%, #F4F4F4 100%);"></div>
+</div>
+
+{% schema %}
+{
+  "name": "Section Break",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "section_break_image",
+      "label": "Section Break Image"
+    }
+  ]
+}
+{% endschema %}

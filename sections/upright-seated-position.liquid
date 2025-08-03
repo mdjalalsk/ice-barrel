@@ -1,0 +1,211 @@
+<div class="relative isolate overflow-hidden bg-withe w-full h-[1200px] lg:h-[1700px] px-4 lg:px-20">
+  {% if section.settings.banner_image != blank %}
+    <img
+      src="{{ section.settings.banner_image | image_url: width: 1425 }}"
+      alt="Banner Background"
+      width="1425"
+      height="1700"
+      class="absolute inset-0 -z-10 object-cover w-full h-full hidden md:block">
+  {% else %}
+    {{ 'hero-apparel-1' | placeholder_svg_tag: 'absolute inset-0 -z-10 object-cover w-full h-full' }}
+  {% endif %}
+
+  <section class="flex flex-col md:flex-row gap-y-5 w-full pt-10 md:pt-20 lg:pt-[140px]">
+    <!-- Left Content Block -->
+    <div class=" space-y-6 w-[70%] md:w-[341.55px]">
+      <h2 class="text-left  font-medium text-[32px] lg:text-[48.7px] lg:leading-[50.52px] leading-[100%] tracking-[-0.04em] lg:tracking-[-1.01px] align-middle font-inter">{{ section.settings.content_left_title | default: 'Upright seated position' }}</h2>
+      <p class="text-left text-[#191B1D73] font-normal text-lg lg:text-[19.2px] lg:leading-[27px] leading-[135%] tracking-[-0.03em] lg:tracking-[-0.16px] align-middle">{{ section.settings.content_left_description | default: 'Supports a natural, alert posture — designed to keep you engaged while your body responds to the cold.' }}</p>
+
+      <!-- Trust Section -->
+      <div class=" hidden md:flex flex-col  space-x-1 mb-2 mt-7 lg:mt-[66.8px] w-full  lg:w-[236px] ">
+        <svg
+          width="48"
+          height="49"
+          viewBox="0 0 48 49"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg">
+          <g clip-path="url(#clip0_2_3069)">
+            <path
+              d="M12.0001 24.2346L14.6943 32.5264H23.4128L16.3594 37.651L19.0535 45.9428L12.0001 40.8182L4.94666 45.9428L7.64082 37.651L0.587402 32.5264H9.30591L12.0001 24.2346Z"
+              fill="#5384AD"
+              fill-opacity="0.5" />
+            <path
+              d="M36.0001 24.2346L38.6943 32.5264H47.4128L40.3594 37.651L43.0535 45.9428L36.0001 40.8182L28.9467 45.9428L31.6408 37.651L24.5874 32.5264H33.3059L36.0001 24.2346Z"
+              fill="#5384AD"
+              fill-opacity="0.25" />
+            <path d="M24.0001 0.234619L26.6943 8.52642H35.4128L28.3594 13.651L31.0535 21.9428L24.0001 16.8182L16.9467 21.9428L19.6408 13.651L12.5874 8.52642H21.3059L24.0001 0.234619Z" fill="#5384AD" />
+          </g>
+          <defs>
+            <clipPath id="clip0_2_3069">
+              <rect
+                width="48"
+                height="48"
+                fill="white"
+                transform="translate(0 0.234619)" />
+            </clipPath>
+          </defs>
+        </svg>
+        <p class=" mt-[13.3px] font-medium text-[#191B1D] text-[18.9px] leading-[20px] tracking-[-0.16px] align-middle">{{ section.settings.left_card_title }}</p>
+         <p class=" mt-[10.5px] text-[#191B1D73] font-normal text-[15.6px] leading-[19.2px] tracking-[-0.16px] align-middle">{{ section.settings.left_card_description }}</p>
+      </div>
+      
+    </div>
+
+    <!-- Center Product Image -->
+    <div class="flex justify-center w-full md:w-[594.55px] h-full md:h-[300px] lg:h-[445.5px] ms-0 me-0 lg:ms-[37.95px] lg:me-[54.95px]">
+      {% if section.settings.upright_seated_image != blank %}
+        <img
+          src="{{ section.settings.upright_seated_image | image_url: width: 594.55 }}"
+          alt="Ice Barrel Product"
+          width="594.55"
+          height="445.5"
+          class="w-full h-auto object-contain">
+      {% else %}
+        {{ 'collection-1' | placeholder_svg_tag: 'w-full h-auto object-contain' }}
+      {% endif %}
+    </div>
+     
+    <div class="  flex md:hidden flex-col text-end  self-end space-x-1 my-16 w-[60%] lg:w-[236px] ">
+        <svg
+      class="self-end"
+          width="48"
+          height="49"
+          viewBox="0 0 48 49"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg">
+          <g clip-path="url(#clip0_2_3069)">
+            <path
+              d="M12.0001 24.2346L14.6943 32.5264H23.4128L16.3594 37.651L19.0535 45.9428L12.0001 40.8182L4.94666 45.9428L7.64082 37.651L0.587402 32.5264H9.30591L12.0001 24.2346Z"
+              fill="#5384AD"
+              fill-opacity="0.5" />
+            <path
+              d="M36.0001 24.2346L38.6943 32.5264H47.4128L40.3594 37.651L43.0535 45.9428L36.0001 40.8182L28.9467 45.9428L31.6408 37.651L24.5874 32.5264H33.3059L36.0001 24.2346Z"
+              fill="#5384AD"
+              fill-opacity="0.25" />
+            <path d="M24.0001 0.234619L26.6943 8.52642H35.4128L28.3594 13.651L31.0535 21.9428L24.0001 16.8182L16.9467 21.9428L19.6408 13.651L12.5874 8.52642H21.3059L24.0001 0.234619Z" fill="#5384AD" />
+          </g>
+          <defs>
+            <clipPath id="clip0_2_3069">
+              <rect
+                width="48"
+                height="48"
+                fill="white"
+                transform="translate(0 0.234619)" />
+            </clipPath>
+          </defs>
+        </svg>
+        <p class=" mt-[13.3px] font-medium text-[#191B1D] text-[18.9px] leading-[20px] tracking-[-0.16px] align-middle">{{ section.settings.left_card_title }}</p>
+         <p class=" mt-[10.5px] text-[#191B1D73] font-normal text-[15.6px] leading-[19.2px] tracking-[-0.16px] align-middle">{{ section.settings.left_card_description }}</p>
+    </div>
+    <!-- Right Content Block -->
+    <div class="space-y-4 w-[60%] md:w-[236px]">
+      <!-- Icon -->
+      <div class="flex justify-start lg:justify-end">
+        <svg
+          width="36"
+          height="37"
+          viewBox="0 0 36 37"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg">
+          <g clip-path="url(#clip0_2_3044)">
+            <path d="M3.40057 36.3751V20.8296H0L6.79513e-07 36.3751H3.40057Z" fill="#5384AD" />
+            <path d="M0 36.375H8.18182V33.1023H0V36.375Z" fill="#5384AD" />
+            <path d="M32.5996 0.375V15.9205H36.0001V0.375L32.5996 0.375Z" fill="#5384AD" />
+            <path d="M36.0001 0.375001L27.8184 0.375V3.64773H36.0001V0.375001Z" fill="#5384AD" />
+            <path
+              d="M27.1906 18.6963C27.249 14.6423 26.548 10.5999 25.0175 6.5459H11.1847C9.65423 10.5999 8.95325 14.6423 9.01167 18.6963C15.0752 20.2035 21.127 20.2035 27.1906 18.6963Z"
+              fill="#5384AD"
+              fill-opacity="0.5" />
+            <path d="M21.3842 11.7097H14.8183C13.9279 11.7097 13.2061 12.4316 13.2061 13.322V14.2566C13.2061 15.147 13.9279 15.869 14.8183 15.869H21.3842C22.2747 15.869 22.9965 15.147 22.9965 14.2566V13.322C22.9965 12.4316 22.2747 11.7097 21.3842 11.7097Z" fill="#5384AD" />
+            <path d="M9.01169 18.6963C9.0701 22.1896 9.67762 25.6829 10.916 29.1761C11.0796 29.6434 11.4651 29.9939 11.9441 30.1108C16.0449 31.0921 20.1457 31.0921 24.2465 30.1108C24.7255 29.9939 25.111 29.6434 25.2746 29.1761C26.513 25.6829 27.1205 22.1896 27.1789 18.6963C21.1154 20.2035 15.0635 20.2035 9 18.6963H9.01169Z" fill="#5384AD" />
+            <path d="M18.1011 7.83109C21.8887 7.83109 24.9591 7.26095 24.9591 6.55764C24.9591 5.85432 21.8887 5.28418 18.1011 5.28418C14.3136 5.28418 11.2432 5.85432 11.2432 6.55764C11.2432 7.26095 14.3136 7.83109 18.1011 7.83109Z" fill="#5384AD" />
+          </g>
+          <defs>
+            <clipPath id="clip0_2_3044">
+              <rect
+                width="36"
+                height="36"
+                fill="white"
+                transform="translate(0 0.375)" />
+            </clipPath>
+          </defs>
+        </svg>
+
+      </div>
+      <h3 class="mt-[13.3px] font-medium text-[#191B1D] text-[18.9px] leading-[20px] tracking-[-0.16px] align-middle">{{ section.settings.content_right_title }}</h3>
+      <p class="text-[#191B1D73] font-normal text-[15.6px] leading-[19.2px] tracking-[-0.16px] align-middle mt-[10.5px]">{{ section.settings.content_right_description }}</p>
+    </div>
+  </section>
+
+</div>
+
+{% schema %}
+  {
+    "name": "Upright Seated Section",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "banner_image",
+        "label": "Banner Image"
+      },
+      {
+        "type": "header",
+        "content": "Upright content settings"
+      },
+      {
+        "type": "image_picker",
+        "id": "upright_seated_image",
+        "label": "Upright Seated Image"
+      },
+      {
+        "type": "header",
+        "content": " Content Left"
+      }, {
+        "type": "text",
+        "id": "content_left_title",
+        "label": "Content Left Title",
+        "default": "Upright seated position"
+      }, {
+        "type": "text",
+        "id": "content_left_description",
+        "label": "Content Left description",
+        "default": "Upright seated position Supports a natural, alert posture — designed to keep you engaged while your body responds to the cold."
+      }, {
+        "type": "header",
+        "content": "left Card"
+      }, {
+        "type": "text",
+        "id": "left_card_title",
+        "label": "Left Card Title",
+        "default": "Ergonomic Design"
+      }, {
+        "type": "text",
+        "id": "left_card_description",
+        "label": "Left Card description",
+        "default": "Our upright seated position is designed to promote better posture and reduce strain on your back."
+      }, {
+        "type": "header",
+        "content": "Content Right"
+      }, {
+        "type": "text",
+        "id": "content_right_title",
+        "label": "Content Right Title",
+        "default": "Why Choose Upright Seated?"
+      }, {
+        "type": "text",
+        "id": "content_right_description",
+        "label": "Content Right description",
+        "default": "Our upright seated position promotes better posture, reduces strain, and enhances your overall well-being.</p>"
+      }
+
+
+    ],
+
+    "presets": [
+      {
+        "name": "Upright Seated Section"
+
+      }
+    ]
+  }
+{% endschema %}

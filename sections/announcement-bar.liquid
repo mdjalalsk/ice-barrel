@@ -1,0 +1,32 @@
+<div class="w-full h-[55px] lg:h-[52.5px] flex flex-col lg:flex-row gap-y-3 lg:gap-x-6 items-center justify-center bg-white lg:bg-[#191B1D] text-white p-2">
+  <p class=" hidden lg:block font-medium text-sm lg:text-[20.8px] leading-[25.6px] tracking-[-0.53px] align-middle">{{ section.settings.text }}</p>
+  <a href="{{ section.settings.button_url }}" class=" hidden lg:flex  w-[83.1px] h-[32.5px] bg-white items-center justify-center  text-[#191B1D] font-inter font-normal text-[10.5px] leading-[16.5px] tracking-[-0.16px]  rounded-[4px]">{{ section.settings.button_text }}</a>
+</div>
+
+
+{% schema %}
+{
+  "name": "Announcement Bar",
+  "settings": [
+    {
+      "type": "text",
+      "id": "text",
+      "label": "Text",
+      "default": "Summer Sale is now live, get 15% off on all products."
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "Shop now!"
+    },
+    {
+      "type": "url",
+      "id": "button_url",
+      "label": "Button URL",
+      "default": "/collections/all"
+    }
+  ]
+}
+{% endschema %}
+  
