@@ -19,7 +19,7 @@
 
       <div class="w-full md:w-[280px] lg:w-[330px]">
         <!-- Title -->
-        <h2 class="font-medium text-[48.7px] leading-[50.52px] tracking-[-1.01px] font-inter align-middle text-[#191B1D] mb-6">
+        <h2 class="font-medium text-[48.7px] leading-[50.52px] tracking-[-1.01px] font-inter align-middle text-[#191B1D] mb-[19px]">
           {{ section.settings.title }}
         </h2>
       </div>
@@ -34,22 +34,22 @@
             alt="Feature Checkmark">
         </div>
       {% endif %}
-      <div class="w-full md:w-[360px] lg:w-[472px] lg:pr-8 pr-0">
+      <div class="w-full md:w-[360px] lg:w-[472px] lg:pr-8 pr-0 mt-[18.5px]">
         <!-- Description -->
-        <p class="text-[#191B1D73] font-normal text-[15.6px] leading-[20.8px] tracking-[-0.16px] font-inter align-middle mb-12 ">
+        <p class="text-black/45 font-normal text-[15.6px] leading-[20.8px] tracking-[-0.16px] font-inter align-middle ">
           {{ section.settings.description }}
         </p>
       </div>
 
       <!-- Bottom Content -->
-      <div class=" mt-5 md:mt-10 lg:mt-12 text-left md:text-right lg:text-left">
-        <h2 class="font-medium text-[78.7px] leading-[100px] tracking-[-0.16px] align-middle text-[#191B1D]">
+      <div class=" mt-5 md:mt-10 lg:mt-[70px] text-left md:text-right lg:text-left">
+        <h2 class="font-medium font-inter text-[78.7px] leading-[100px] tracking-[-0.16px] align-middle text-[#191B1D]">
           {{ section.settings.left_bottom_title }}
         </h2>
-        <p class="mt-3 lg:mt-6 text-[15.6px] leading-[19.2px] tracking-[-0.16px] font-inter align-middle font-extrabold">
-          <strong>{{ section.settings.left_bottom_description-1 }}</strong>
+        <p class="mt-3 md:mt-6 lg:mt-9 text-[15.6px] leading-[19.2px] tracking-[-0.16px] font-inter align-middle font-normal">
+          <span class="font-medium">{{ section.settings.left_bottom_description-1 }}</span>
           <br>
-          <span class="text-[#191B1D73]">{{ section.settings.left_bottom_description-2 }}</span>
+          <span class="text-black/45">{{ section.settings.left_bottom_description-2 }}</span>
         </p>
       </div>
     </div>

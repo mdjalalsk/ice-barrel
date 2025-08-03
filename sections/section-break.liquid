@@ -1,6 +1,6 @@
 <div class=" bg-[linear-gradient(0deg,_#FFFFFF_50%,_#191B1D_50%)] h-[400px] lg:h-[805px] w-full relative">
   {% if section.settings.section_break_image != blank %}
-    <img src="{{ section.settings.section_break_image | image_url: width: 1265  }}" alt="Section Break Image" width="1265" height="full" class="w-full h-full px-8 lg:px-20 object-cover">
+    <img src="{{ section.settings.section_break_image | image_url: width: 1265  }}" alt="Section Break Image" width="1265" height="full" class="w-full h-full px-7 lg:px-20 object-cover">
   {% else %}
     {{ 'collection-apparel-1' | placeholder_svg_tag: 'w-full h-full px-20 object-cover' }}
   {% endif %}

@@ -13,11 +13,11 @@
   <section class="flex flex-col md:flex-row gap-y-5 w-full pt-10 md:pt-20 lg:pt-[140px]">
     <!-- Left Content Block -->
     <div class=" space-y-6 w-[70%] md:w-[341.55px]">
-      <h2 class="text-left  font-medium text-[32px] lg:text-[48.7px] lg:leading-[50.52px] leading-[100%] tracking-[-0.04em] lg:tracking-[-1.01px] align-middle font-inter">{{ section.settings.content_left_title | default: 'Upright seated position' }}</h2>
-      <p class="text-left text-[#191B1D73] font-normal text-lg lg:text-[19.2px] lg:leading-[27px] leading-[135%] tracking-[-0.03em] lg:tracking-[-0.16px] align-middle">{{ section.settings.content_left_description | default: 'Supports a natural, alert posture — designed to keep you engaged while your body responds to the cold.' }}</p>
+      <h2 class="text-left  font-medium text-[32px] lg:text-[48.7px] lg:leading-[50.52px] leading-[100%] tracking-[-0.04em] lg:tracking-[-1.01px] align-middle font-inter">{{ section.settings.content_left_title }}</h2>
+      <p class="text-left text-black/45 font-normal text-lg lg:text-[19.2px] lg:leading-[27px] leading-[135%] tracking-[-0.03em] lg:tracking-[-0.16px] align-middle mt-[28px]">{{ section.settings.content_left_description }}</p>
 
       <!-- Trust Section -->
-      <div class=" hidden md:flex flex-col  space-x-1 mb-2 mt-7 lg:mt-[66.8px] w-full  lg:w-[236px] ">
+      <div class=" hidden md:flex flex-col  space-x-1 mb-2 mt-7 lg:mt-[66.8px] w-full lg:w-[236px] ">
         <svg
           width="48"
           height="49"
@@ -46,7 +46,7 @@
           </defs>
         </svg>
         <p class=" mt-[13.3px] font-medium text-[#191B1D] text-[18.9px] leading-[20px] tracking-[-0.16px] align-middle">{{ section.settings.left_card_title }}</p>
-         <p class=" mt-[10.5px] text-[#191B1D73] font-normal text-[15.6px] leading-[19.2px] tracking-[-0.16px] align-middle">{{ section.settings.left_card_description }}</p>
+         <p class=" mt-[10.5px] text-black/45 font-normal text-[15.6px] leading-[19.2px] tracking-[-0.16px] align-middle">{{ section.settings.left_card_description }}</p>
       </div>
       
     </div>
@@ -133,7 +133,7 @@
 
       </div>
       <h3 class="mt-[13.3px] font-medium text-[#191B1D] text-[18.9px] leading-[20px] tracking-[-0.16px] align-middle">{{ section.settings.content_right_title }}</h3>
-      <p class="text-[#191B1D73] font-normal text-[15.6px] leading-[19.2px] tracking-[-0.16px] align-middle mt-[10.5px]">{{ section.settings.content_right_description }}</p>
+      <p class="text-black/45 font-normal text-[15.6px] leading-[19.2px] tracking-[-0.16px] align-middle mt-[10.5px]">{{ section.settings.content_right_description }}</p>
     </div>
   </section>
 
@@ -169,7 +169,7 @@
         "type": "text",
         "id": "content_left_description",
         "label": "Content Left description",
-        "default": "Upright seated position Supports a natural, alert posture — designed to keep you engaged while your body responds to the cold."
+        "default": "Supports a natural, alert posture — designed to keep you engaged while your body responds to the cold."
       }, {
         "type": "header",
         "content": "left Card"
@@ -177,12 +177,12 @@
         "type": "text",
         "id": "left_card_title",
         "label": "Left Card Title",
-        "default": "Ergonomic Design"
+        "default": "Trusted by thousands"
       }, {
-        "type": "text",
+        "type": "textarea",
         "id": "left_card_description",
         "label": "Left Card description",
-        "default": "Our upright seated position is designed to promote better posture and reduce strain on your back."
+        "default": "The original Ice Barrel — proven effective for daily cold exposure around the world."
       }, {
         "type": "header",
         "content": "Content Right"
@@ -190,12 +190,12 @@
         "type": "text",
         "id": "content_right_title",
         "label": "Content Right Title",
-        "default": "Why Choose Upright Seated?"
+        "default": "Portable & Versatile"
       }, {
-        "type": "text",
+        "type": "textarea",
         "id": "content_right_description",
         "label": "Content Right description",
-        "default": "Our upright seated position promotes better posture, reduces strain, and enhances your overall well-being.</p>"
+        "default": "Lightweight enough to move when needed — built for homes apartments, gyms, or the great outdoors."
       }
 
 

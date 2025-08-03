@@ -1,15 +1,11 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 @import "tailwindcss";
 
-:root, :host {
+@theme{
   --font-inter: 'Inter' !important;
   --default-font-family: 'Inter' !important;
 }
-
-html, body {
-  font-family: var(--font-inter) !important;
-
-}
-
 @layer utilities {
   .font-inter {
     font-family: var(--font-inter);

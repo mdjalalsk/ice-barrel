@@ -22,7 +22,7 @@
       <nav class="hidden lg:flex items-center space-x-8">
         {% for link in section.settings.menu.links %}
           <div class="relative group">
-            <a href="{{ link.url }}" class="flex items-center text-[#191B1D] hover:text-gray-900 text-[15.6px] font-normal leading-[20.8px] tracking-[-0.16px] transition-colors duration-200" style="font-family: Inter;">
+            <a href="{{ link.url }}" class="flex items-center text-[#191B1D] text-[15.6px] font-normal leading-[20.8px] tracking-[-0.16px] font-inter ">
               {{ link.title }}
               {% if link.links != blank %}
                 <svg
@@ -42,7 +42,7 @@
               <div class="absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-1 group-hover:translate-y-0">
                 <div class="py-2">
                   {% for child_link in link.links %}
-                    <a href="{{ child_link.url }}" class="block px-4 py-2 text-[#191B1D] hover:text-gray-900 text-[15.6px] font-normal leading-[20.8px] tracking-[-0.16px] transition-colors duration-200" style="font-family: Inter;">{{ child_link.title }}</a>
+                    <a href="{{ child_link.url }}" class="block px-4 py-2 text-[#191B1D] text-[15.6px] font-inter font-normal leading-[20.8px] tracking-[-0.16px] ">{{ child_link.title }}</a>
                   {% endfor %}
                 </div>
               </div>
@@ -50,7 +50,7 @@
           </div>
         {% endfor %}
 
-        <a href="/pages/talk-live" class="bg-[#191B1D] text-white px-4 py-2 rounded-[6px] font-inter font-normal text-[13px] leading-[18.2px] tracking-[-0.16px] align-middle transition-colors duration-200 shadow-sm hover:shadow-md">
+        <a href="/pages/talk-live" class="bg-[#191B1D] text-white px-4 py-2 rounded-[6px] font-inter font-normal text-[13px] leading-[18.2px] tracking-[-0.16px] align-middle shadow-sm hover:shadow-md">
           Talk Live
         </a>
 
@@ -166,7 +166,7 @@
       {% for link in section.settings.menu.links %}
         <div class="mobile-menu-item">
           <div class="flex items-center justify-between">
-            <a href="{{ link.url }}" class="block text-[#191B1D] hover:text-gray-900 text-[15.6px] font-normal leading-[20.8px] tracking-[-0.16px] transition-colors duration-200" style="font-family: Inter;">
+            <a href="{{ link.url }}" class="block text-[#191B1D] text-[15.6px] font-normal leading-[20.8px] tracking-[-0.16px] font-inter">
               {{ link.title }}
             </a>
             {% if link.links != blank %}
@@ -180,7 +180,7 @@
           {% if link.links != blank %}
             <div class="mobile-submenu ml-4 mt-2 space-y-2 hidden">
               {% for child_link in link.links %}
-                <a href="{{ child_link.url }}" class="block text-[#191B1D] hover:text-gray-900 text-[15.6px] font-normal leading-[20.8px] tracking-[-0.16px] transition-colors duration-200" style="font-family: Inter;">
+                <a href="{{ child_link.url }}" class="block text-[#191B1D] font-inter text-[15.6px] font-normal leading-[20.8px] tracking-[-0.16px]">
                   {{ child_link.title }}
                 </a>
               {% endfor %}
@@ -191,7 +191,7 @@
 
       <!-- Mobile Talk Live Button -->
       <div class="pt-4">
-        <a href="/pages/talk-live" class="block w-full bg-gray-900 text-white px-4 py-3 rounded-sm text-sm font-medium hover:bg-gray-800 transition-colors duration-200 text-center">
+        <a href="/pages/talk-live" class="block w-full bg-gray-900 text-white px-4 py-3 rounded-sm text-sm font-medium font-inter text-center">
           Talk Live
         </a>
       </div>

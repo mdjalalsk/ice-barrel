@@ -12,7 +12,7 @@
     {% endif %}
     <div class=" mx-[55px] lg:mx-[80px] mt-[53px] lg:mt-[74.99px]">
       <div class=" flex flex-col items-center text-center">
-        <p class=" flex items-center gap-x-1 font-normal text-[11.1px] leading-[14px] tracking-[-0.16px] align-middle mb-3  text-[#191B1D]"> 
+        <p class=" flex items-center gap-x-1 font-inter font-normal text-[11.1px] leading-[14px] tracking-[-0.16px] align-middle mb-3  text-[#191B1D]"> 
           <span class="inline-block md:hidden ">
             <svg width="72" height="13" viewBox="0 0 72 13" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M6.5 0L7.95934 4.49139H12.6819L8.86126 7.26722L10.3206 11.7586L6.5 8.98278L2.6794 11.7586L4.13874 7.26722L0.318133 4.49139H5.04066L6.5 0Z" fill="#191B1D"/>
@@ -34,12 +34,14 @@
             src="{{ section.settings.hero_product_image | image_url: width: 427 }}"
             alt="Hero Product Image"
             width="427"
-            height="427">
+            height="427"
+            class="w-[280px] lg:w-[427px] h-[37.7px] lg:h-[57.px] object-cover"
+            >
         {% endif %}
-        <p class="font-normal text-[19.2px] leading-[26px] tracking-[-0.16px] align-middle text-[#191B1D] mt-[18.5px] ">{{ section.settings.hero_description }}</p>
+        <p class="font-normal font-inter text-lg lg:text-[19.2px] leading-[130%] lg:leading-[26px] tracking-[-0.16px] align-middle text-[#191B1D] mt-[18.5px] ">{{ section.settings.hero_description }}</p>
         <div class="flex items-center gap-x-3 mt-5">
          <button class=" flex items-center justify-center h-[50px] w-[118px]  bg-[#191B1D] text-white rounded-[200px]">
-          <a href="{{ section.settings.hero_button_url }}" class="font-normal text-[15.6px] leading-[16px] tracking-[-0.16px] align-middle">{{ section.settings.hero_button_text }}</a>
+          <a href="{{ section.settings.hero_button_url }}" class="font-normal text-[15.6px] leading-[16px] tracking-[-0.36px] lg:tracking-[-0.16px] align-middle">{{ section.settings.hero_button_text }}</a>
          </button> 
           <span class="font-medium text-[18.9px] leading-[24px] tracking-[-0.16px] align-middle">{{ section.settings.hero_price_after }}</span>
           <span class="hidden lg:block line-through text-red-500">{{ section.settings.hero_price_before }}</span>
@@ -49,12 +51,12 @@
     </div>
     <div class="cookie-modal  absolute bottom-[52px] left-0 w-full  hidden lg:flex flex-col lg:flex-row justify-between items-center bg-white gap-y-5 lg:gap-y-0  p-5 lg:p-[32px] z-50">
       <div class="w-full lg:w-[721px]">
-        <h2 class="font-medium text-[27px] leading-[28.43px] tracking-[-1.35px] align-middle text-[#191B1D]">{{ section.settings.cookie_consent_title }}</h2>
+        <h2 class="font-medium font-inter text-[27px] leading-[28.43px] tracking-[-1.35px] align-middle text-[#1F1F1F]">{{ section.settings.cookie_consent_title }}</h2>
         <p class="mt-[14px] font-normal text-[15.6px] leading-[26px] tracking-[-0.16px] align-middle text-[#1F1F1F]">{{ section.settings.cookie_consent_text }}</p>
       </div>
       <div class="w-full lg:w-[540px] flex items-center gap-x-[30px]">
-        <button class="accept-cookies w-[270px]  border-[1px] px-[52px] py-[10px] border-[#1F1F1F]">{{ section.settings.cookie_consent_accept_text }}</button>
-        <button class=" decline-cookies w-[270px] border-[1px] px-[52px] py-[10px] border-[#1F1F1F]">{{ section.settings.cookie_consent_decline_text }}</button>
+        <button class="accept-cookies w-[270px] font-inter font-normal tracking-[-0.16px] leading-[19.2px] text-[15.6px] text-[#333333] px-[52px] py-[10px] border-[1px] border-[#1F1F1F]">{{ section.settings.cookie_consent_accept_text }}</button>
+        <button class=" decline-cookies w-[270px] font-inter font-normal tracking-[-0.16px] leading-[19.2px] text-[15.6px] text-[#333333] px-[52px] py-[10px] border-[1px] border-[#1F1F1F]">{{ section.settings.cookie_consent_decline_text }}</button>
       </div>
     </div>
   </div>
